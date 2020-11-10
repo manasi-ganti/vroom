@@ -231,3 +231,4 @@ for i in range(0, len(indexes)):
 print(len(indexes))
 print(len(engagement))
 plt.scatter(indexes, engagement)
+plt.show()
