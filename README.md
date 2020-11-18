@@ -15,6 +15,6 @@ Extension: the utility will stop itself when the meeting is over.
 
 
 Install with:
-`pip install vroom-pkg-mganti==0.1`
+`pip3 install vroom-pkg-mganti==0.1`
 
 *the working package/application name is just a dumb joke
