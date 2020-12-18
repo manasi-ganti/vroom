@@ -14,7 +14,6 @@ Users need to start the utility on their laptop while they are attending a lectu
 Extension: the utility will stop itself when the meeting is over.
 
 
-Install with:
-`pip3 install vroom-pkg-mganti==0.1`
+Install by downloading zip file, as well as all dependencies in requirements.txt
 
 *the working package/application name is just a dumb joke
