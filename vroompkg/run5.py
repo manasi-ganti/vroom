@@ -119,6 +119,8 @@ class Vroom:
 		return threshold
 
 	def writeAnalytics(file_name, rows, names, values, engagement):
+		if os.path.exists(Vroom.report_file_name):
+			os.remove(Vroom.report_file_name)
 		with open(file_name, 'w', newline='') as csvfile:
 			spamwriter = csv.writer(csvfile, delimiter=',',quotechar='\'', quoting=csv.QUOTE_MINIMAL)
 			for num in range(0, rows):
@@ -145,6 +147,7 @@ class Vroom:
 		try:
 			status = (obj["status"])
 		except KeyError as e:
+			print(obj)
 			return True
 		if(status == "waiting"):
 			return True
@@ -155,10 +158,6 @@ class Vroom:
 		print("[INFO] starting video stream...")
 		vs = VideoStream(srcs = 0).start()
 		time.sleep(2.0)
-		if os.path.exists(Vroom.report_file_name):
-			os.remove(Vroom.report_file_name)
-		else:
-			print("csv file does not exist")
 		n = -1 #frame counting
 		m = 0 #smile counting
 		w = 0 #wide eyed counting
@@ -181,7 +180,8 @@ class Vroom:
 			real_frame = imutils.resize(real_frame, width = 400)
 			if n==0:
 				frame1 = real_frame
-
+			if type(real_frame) == None:
+				continue
 			isWide = det.Detect(Vroom.net, Vroom.predictor).wide(real_frame)
 			isSquint = det.Detect(Vroom.net, Vroom.predictor).squint(real_frame)
 			isSmile = det.Detect(Vroom.net, Vroom.predictor).smile(real_frame, .4)
@@ -215,15 +215,15 @@ class Vroom:
 			if(file_name != self.current_profile_pic):
 				self.changePFP(file_name)
 				self.current_profile_pic = file_name
-			if(self.isMeetingOver()):
-				break
+			if(n%2000):
+				variables = ["percentage of time smiling", "percentage of time wide-eyed","percentage of time squinting", "percentage of time close to camera", "percentage of time far from camera"]
+				if n != 0:
+					values = [(m/n)*100, (w/n)*100, (s/n)*100, (close/n)*100, (far/n)*100]
+				else:
+					values = [0,0,0,0,0]
+				Vroom.writeAnalytics(Vroom.report_file_name, len(variables), variables, values, self.engagement)
 
-		variables = ["percentage of time smiling", "percentage of time wide-eyed","percentage of time squinting", "percentage of time close to camera", "percentage of time far from camera"]
-		if n != 0:
-			values = [(m/n)*100, (w/n)*100, (s/n)*100, (close/n)*100, (far/n)*100]
-		else:
-			values = [0,0,0,0,0]
-		Vroom.writeAnalytics(Vroom.report_file_name, len(variables), variables, values, self.engagement)
+
 		# cleanup
 		cv2.destroyAllWindows()
 		vs.stop()
