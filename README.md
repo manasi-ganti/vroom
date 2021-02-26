@@ -50,6 +50,9 @@ Ok, pitch over. Want to learn about this project without suffering through my at
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update`
 
+#### 1.5. Install python3 (if you don't have it)
+`brew install python python3`
+
 #### 2. Install cmake
 `brew install cmake`
 
