@@ -46,6 +46,9 @@ Ok, pitch over. Want to learn about this project without suffering through my at
 ## Instructions
 
 ### Download
+#### 0. Install xcode
+Go to app store and install xcode.
+
 #### 1. Install homebrew
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 `brew update`
@@ -80,10 +83,11 @@ In the downloaded folder, you'll find four images: defaultpic.png, smilepic.png,
 #### 1. Join your meeting. Turn your video off.
 
 #### 1.5 Activate virtual environment (if you created it when downloading)
-`source vroom-env/bin/activate`
+`source vroom-venv/bin/activate`
 
 #### 2. Run
-Open terminal. Type `python3 -m vroompkg -u <your zoom account email> -m <10-digit meeting ID> -t <the JWT token you saved>`
+Open terminal. Type `python3 -m vroompkg -u <your zoom account email> -m <10-digit meeting ID, no spaces> -t <the JWT token you saved>`
+example: `python3 -m vroompkg -u user@random.org -m 1234567890`
 Make sure your JWT token hasn't expired.
 
 #### 3. End
