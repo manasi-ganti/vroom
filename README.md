@@ -97,6 +97,7 @@ https://docs.google.com/forms/d/e/1FAIpQLSe3DtjxwRutiEEWN05C-BuC_I97shJp9bf0yORI
 * doesn't end when meeting ends, you have to press control C
 * hand detection not yet implemented
 * only works on Zoom
+* 1 to 2 second delay
 
 
 ## Project Summary
