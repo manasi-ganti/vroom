@@ -24,18 +24,6 @@ def vroom(args):
 
 	vr = Vroom(args)
 	vr.webcam([src_path+"/defaultpic.png",src_path+"/smilepic.png",src_path+"/squintpic.png",src_path+"/widepic.png"])
-	with open(Vroom.report_file_name, newline='') as csvfile:
-		spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-		for row in spamreader:
-			print(', '.join(row))
-	engagement = vr.engagement
-	indexes = [0]*len(engagement)
-
-	for i in range(0, len(indexes)):
-		indexes[i] = i
-	plt.scatter(indexes, engagement)
-	plt.savefig(date.today().strftime("%m-%d-%y") + ".png")#vr.report_file_name+'.png')
-
 
 class Vroom:
 
@@ -45,7 +33,7 @@ class Vroom:
 	print("[INFO] loading model...")
 	net = cv2.dnn.readNetFromCaffe(src_path + "/deploy.prototxt.txt", src_path + "/res10_300x300_ssd_iter_140000.caffemodel")
 	time.sleep(2.0)
-	report_file_name = date.today().strftime("%m-%d-%y") + '.csv'
+	report_file_name = date.today().strftime("%m-%d-%y")
 
 
 	def __init__(self, args):
@@ -119,8 +107,8 @@ class Vroom:
 		return threshold
 
 	def writeAnalytics(file_name, rows, names, values, engagement):
-		if os.path.exists(Vroom.report_file_name):
-			os.remove(Vroom.report_file_name)
+		if os.path.exists(file_name):#Vroom.report_file_name + '.csv'):
+			os.remove(file_name)#Vroom.report_file_name+'.csv')
 		with open(file_name, 'w', newline='') as csvfile:
 			spamwriter = csv.writer(csvfile, delimiter=',',quotechar='\'', quoting=csv.QUOTE_MINIMAL)
 			for num in range(0, rows):
@@ -221,8 +209,22 @@ class Vroom:
 					values = [(m/n)*100, (w/n)*100, (s/n)*100, (close/n)*100, (far/n)*100]
 				else:
 					values = [0,0,0,0,0]
-				Vroom.writeAnalytics(Vroom.report_file_name, len(variables), variables, values, self.engagement)
+				Vroom.writeAnalytics(Vroom.report_file_name + '.csv', len(variables), variables, values, self.engagement)
 
+				with open(Vroom.report_file_name + '.csv', newline='') as csvfile:
+					spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+					for row in spamreader:
+						print(', '.join(row))
+				indexes = [0]*len(self.engagement)
+
+				for i in range(0, len(indexes)):
+					indexes[i] = i
+				plt.clf()
+				plt.scatter(indexes, self.engagement)
+
+				if os.path.exists(Vroom.report_file_name +'.png'):
+					os.remove(Vroom.report_file_name+'.png')
+				plt.savefig(Vroom.report_file_name + ".png")#vr.report_file_name+'.png')
 
 		# cleanup
 		cv2.destroyAllWindows()

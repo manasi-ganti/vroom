@@ -14,26 +14,23 @@ Ever spent hours at a time/an entire afternoon obsessively creating picrews? (iy
 
 If you don't know what picrews are, they're basically customizable avatars. When you downlaod this program, it comes with a very generic one as an example, but the whole point is for you to change it!! Here are some that you can try: 
 
-https://picrew.me/image_maker/420013
+https://picrew.me/image_maker/344854 (used for the default)
 
-https://picrew.me/image_maker/344854
+https://picrew.me/image_maker/137904
 
 https://picrew.me/image_maker/567717
 
-https://picrew.me/image_maker/137904
+https://picrew.me/image_maker/407027
+
+https://picrew.me/image_maker/644129
+
+https://picrew.me/image_maker/420013
 
 https://picrew.me/image_maker/154823 (one of my favorites)*
 
 https://picrew.me/image_maker/14314 (another favorite)*
 
-I don't like these ones as much but they are probably still useful for others:
-https://picrew.me/image_maker/407027
-
-https://picrew.me/image_maker/644129
-
-https://picrew.me/image_maker/565738
-
-*Yes, it is more useful if the images match up with the expressions (squint, wide-eyed, smile -- more to come!!), but these are the best anyways.
+*However, it is more useful if the images match up with the expressions (squint, wide-eyed, smile -- more to come!!)
 
 Side note: I sincerely doubt that anyone will be judging your picrews – I wouldn't and I'm a very judgemental person – but, hey, I get it. You can still use it with friends for fun (anyone have online friends they're not allowed to show their face to? no? just me?) and obviously, there's no restriction on which images you choose. (Yes, that does mean you can use memes, raccoon pictures, etc. Who can stop you?). Why use this instead of just setting your profile picture to your picture of choice? Well, consider this: not one raccoon/meme/raccoon meme, but four. 
 
@@ -78,12 +75,15 @@ In the downloaded folder, you'll find four images: defaultpic.png, smilepic.png,
 `source vroom-env/bin/activate`
 
 #### 2. Run
-`python3 -m vroompkg -u <your zoom email> -m <10-digit meeting ID> -t <the JWT token you saved>`
+Open terminal. Type `python3 -m vroompkg -u <your zoom email> -m <10-digit meeting ID> -t <the JWT token you saved>`
 Make sure your JWT token hasn't expired.
 
+#### 3. End
+When your meeting is over, go back to terminal and press control C. 
 #### 3. Access reports
-In Finder, search with the date in the format `mm-dd-yy`. You should find two files titled with the date – a .csv file and a .png.
-example: `02-25-21.png` and `02-25-21.csv`
+In terminal, you should see a breakdown in percentages of how much you performed the detected expressions. In Finder, search with the date in the format `mm-dd-yy`. You should find two files titled with the date – a .csv file and a .png. The .csv will show you the same thing you can see in terminal, but the .png will contain a graph of estimated engagement/interest over time.
+example: `02-24-21.png` and `02-24-21.csv` (you can find these examples in the Github repo if you want to see what they look like)
+
 
 #### 4. Fill out survey.
 Please take 30 seconds to fill out the survey (no hard questions, I promise):
