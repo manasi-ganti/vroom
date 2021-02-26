@@ -47,8 +47,8 @@ Ok, pitch over. Want to learn about this project without suffering through my at
 
 ### Download
 #### 1. Install homebrew
-`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew update`
+`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+`brew update`
 
 #### 1.5. Install python3 (if you don't have it)
 `brew install python python3`
