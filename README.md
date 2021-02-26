@@ -50,7 +50,10 @@ Ok, pitch over. Want to learn about this project without suffering through my at
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update`
 
-#### 2. Create virtual environment (optional)
+#### 2. Install cmake
+`brew install cmake`
+
+#### 2.5. Create virtual environment (optional)
 `python3 -m venv vroom-venv`
 
 #### 3. Install the package
