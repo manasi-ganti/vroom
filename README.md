@@ -44,29 +44,30 @@ Currently, this program works by changing your profile picture in real time, so 
 Ok, pitch over. Want to learn about this project without suffering through my attempts to be funny? Just keep reading, past the Instructions section (although that's probably also useful), second star on the right, and straight on till morning (i.e., the project summary section).
 
 ## Instructions
-
+If you don't have homebrew and python3, this is a more involved process.
 ### Download
-#### 0. Install xcode
-Go to app store and install xcode.
+Open terminal. (For each step, copy-paste the line of code in terminal and press enter. )
+#### 0. Install command line tools
+`xcode-select --install`
 
-#### 1. Install homebrew
+#### 0.5. Install homebrew
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-`brew update`
+Don't forget to press enter when it prompts you to.
 
-#### 1.5. Install python3 (if you don't have it)
+#### 0.75. Install python3 (if you don't have it)
 `brew install python python3`
 
-#### 2. Install cmake
+#### 1. Install cmake
 `brew install cmake`
 
-#### 2.5. Create virtual environment (optional)
+#### 1.5. Create virtual environment (optional)
 `python3 -m venv vroom-venv`
 
-#### 3. Install the package
+#### 2. Install the package
 `pip3 install --timeout 10000 vroompkg`
 (Don't move the downloaded folder from Downloads. If you really have to, it's easy to fix the code if you already have Python experience. You can also contact me and I can send you a version of the program that works for you.)
 
-#### 4. Get zoom API token (in the near future, I will drop this requirement)
+#### 3. Get zoom API token (in the near future, I will drop this requirement)
 Go to [https://marketplace.zoom.us/develop/create] (https://marketplace.zoom.us/develop/create)
 * Log in with your zoom account
 * Choose "Build App" in the Develop dropdown at the top right
