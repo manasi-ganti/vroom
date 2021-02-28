@@ -101,8 +101,7 @@ example: `02-24-21.png` and `02-24-21.csv` (you can find these examples in the G
 
 #### 5. Fill out survey.
 Please take 30 seconds to fill out the survey (no hard questions, I promise):
-https://docs.google.com/forms/d/e/1FAIpQLSe3DtjxwRutiEEWN05C-BuC_I97shJp9bf0yORIDca1_6NWkA/viewform?usp=sf_link
-
+https://forms.gle/mFYcfHfwdKJcEAgQA
 
 ## Known issues and limitations
 * doesn't end when meeting ends, you have to press control C
