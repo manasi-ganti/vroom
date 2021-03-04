@@ -1,4 +1,5 @@
 # vroom
+The goal of this project is to help students engage more with online learning. The program allows students who are uncomfortable turning on their video to convey relevant emotions and engage with the lesson by detecting specific actions such as smiling or raising a hand and conveying them through an avatar.
 There are a lot of sections so scroll through and read the headers to tell which information will be useful to you.  
 
 ## Teachers
