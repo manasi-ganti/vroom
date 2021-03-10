@@ -2,10 +2,8 @@
 The goal of this project is to help students engage more with online learning. The program allows students who are uncomfortable turning on their video to convey relevant emotions and engage with the lesson by detecting specific actions such as smiling or raising a hand and conveying them through an avatar.
 There are a lot of sections so scroll through and read the headers to tell which information will be useful to you.  
 
-## Teachers
-
-Here's the part especially relevant for teachers reading this: 
-You can integrate this program into a lesson. Let's take smiling, which has been shown to improve happiness levels. For example, ask your students to smile to show they've understood what you've said. Now you're asking everyone to interact with the lesson in a way that has a positive impact and is likely to increase their interest in the lesson. In the future, different hand gestures and more expressions will be added, expanding the range of gestures you can use to increase their engagement.
+Demonstration: 
+https://youtu.be/5kFrOYaHkvc
 
 ## Students
 
@@ -43,6 +41,11 @@ Another IMPORTANT side note:
 Currently, this program works by changing your profile picture in real time, so you have to turn off your video to use it, and it only works on Zoom. But, in the future, look out for a version that creates an entirely new stream for you to select as your video source in any video call application. Also, that doesn't make you run the program in terminal every time you want to use it. Basically just an overall better version.
 
 Ok, pitch over. Want to learn about this project without suffering through my attempts to be funny? Just keep reading, past the Instructions section (although that's probably also useful), second star on the right, and straight on till morning (i.e., the project summary section).
+
+## Teachers
+
+Here's the part especially relevant for teachers reading this: 
+You can integrate this program into a lesson. Let's take smiling, which has been shown to improve happiness levels. For example, ask your students to smile to show they've understood what you've said. Now you're asking everyone to interact with the lesson in a way that has a positive impact and is likely to increase their interest in the lesson. In the future, different hand gestures and more expressions will be added, expanding the range of gestures you can use to increase their engagement.
 
 ## Instructions
 If you don't have homebrew and python3, this is a more involved process.
